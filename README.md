@@ -41,31 +41,30 @@ The challenges I forsee going into project week include time management in terms
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+- Home/Books Screen
 
-![Dummy Link](url)
+![Screen Shot 2021-03-31 at 9 01 23 AM](https://user-images.githubusercontent.com/76802866/113157104-36160480-9200-11eb-9d61-1c8a5f1ccc2c.png)
 
-- Desktop Landing
 
-![Dummy Link](url)
+- Book Details Screen
 
-- Desktop Hero
+![Screen Shot 2021-03-31 at 9 01 51 AM](https://user-images.githubusercontent.com/76802866/113157224-4fb74c00-9200-11eb-89d3-dbf3c08522dc.png)
 
-![Dummy Link](url)
 
-- Resource Index
+- Add/Edit Book Screens
 
-![Dummy Link](url)
+![Screen Shot 2021-03-31 at 9 09 00 AM](https://user-images.githubusercontent.com/76802866/113157784-cfddb180-9200-11eb-9317-5885ae6bcb90.png)
 
-- Resource Show
 
-![Dummy Link](url)
+- Log In & Sign Up Screens
 
-- Tablet Resource Index
+![Screen Shot 2021-03-31 at 9 08 41 AM](https://user-images.githubusercontent.com/76802866/113157712-c5231c80-9200-11eb-991e-02efb6ea7b21.png)
 
-![Dummy Link](url)
 
-- Mobile Resource Index
+- Tablet and Mobile Home Screens
+
+![Screen Shot 2021-03-31 at 8 58 16 AM](https://user-images.githubusercontent.com/76802866/113156917-0a931a00-9200-11eb-8e52-f7a45d8568c4.png)
+
 
 
 #### Component Tree
