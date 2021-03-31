@@ -70,8 +70,7 @@ The challenges I forsee going into project week include time management in terms
 
 #### Component Tree
 
-[TBN Component Tree](https://imgur.com/EsDZmjJ)
-
+![TBN Component Tree](https://user-images.githubusercontent.com/76802866/113086567-7bf2ae80-91a7-11eb-8d26-affaff3e02a6.png)
 
 #### Component Architecture
 
@@ -143,7 +142,7 @@ src
 
 #### ERD Model
 
-[TBN ERD](https://imgur.com/wdx9mRx)
+![TBN ERD Model](https://user-images.githubusercontent.com/76802866/113086659-b52b1e80-91a7-11eb-9b9d-53622989bb37.png)
 
 
 ***
