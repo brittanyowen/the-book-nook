@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
-    @reviews = Review.all
+    @book = Book.find(params[:book_id])
+    @reviews = Review.where(book_id: @book)
     render json: @reviews
   end
 
@@ -20,8 +21,7 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1
   def update
-    @review = Review.find(params[:id])
-
+    # @review = Review.find(params[:id])
     if @review.update(review_params)
       render json: @review
     else
@@ -31,8 +31,7 @@ class ReviewsController < ApplicationController
 
   # DELETE /reviews/1
   def destroy
-    @review = Review.find(params[:id])
-
+    # @review = Review.find(params[:id])
     @review.destroy
   end
 
