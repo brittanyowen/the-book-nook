@@ -116,7 +116,7 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Backend set up: install gems, scaffold, clean up unnecessary routes and methods |    H     |     3 hrs      |      hrs     |     hrs    |
+| Backend set up: install gems, scaffold, clean up unnecessary routes and methods, add join table |    H     |     3 hrs      |      hrs     |     hrs    |
 | Test routes and debug |    H     |     2 hrs      |      hrs     |     TBD     |
 | Authorization |    H     |     3 hrs      |      hrs     |     TBD     |
 | Set up React App framework and folder structure, install dependencies, delete boilerplate, add CSS reset code to index.css  |    H     |     1 hrs      |      hrs     |     TBD     |
@@ -142,7 +142,7 @@ src
 
 #### ERD Model
 
-![TBN ERD Model](https://user-images.githubusercontent.com/76802866/113086659-b52b1e80-91a7-11eb-9b9d-53622989bb37.png)
+![TBN ERD Model](https://user-images.githubusercontent.com/76802866/113147513-76708500-91f6-11eb-9186-078cf8065a64.png)
 
 
 ***
