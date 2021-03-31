@@ -4,7 +4,6 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
     render json: @reviews
   end
 
@@ -21,6 +20,8 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1
   def update
+    @review = Review.find(params[:id])
+
     if @review.update(review_params)
       render json: @review
     else
@@ -30,13 +31,15 @@ class ReviewsController < ApplicationController
 
   # DELETE /reviews/1
   def destroy
+    @review = Review.find(params[:id])
+
     @review.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
-      @review = Review.find(params[:id])
+      @review = @current_user.reviews.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
