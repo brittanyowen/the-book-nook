@@ -12,7 +12,7 @@ Ever find yourself scrambling to find a book to read for an upcoming trip? Or ha
 - Filter and search functions 
 
 ### Goals
-My goal for this project is to create an intuitive web application that users will be able to and want to use through simple and intuitive design. Ability to create, edit, and delete entries will give the user the ability to make this application their own. I hope to tackle at least one of my post-MVPs in order to make this app even more user friendly. 
+My goal for this project is to create an intuitive web application that is easy to use through simple and intuitive design. Ability to create, edit, and delete entries will allow the user to make this application their own. I hope to tackle at least one of my post-MVPs in order to make this app even more user friendly. 
 
 ### Challenges
 The challenges I forsee going into project week include time management in terms of bug fixes, knowing when to ask for help, and hyperfixation on styling. Knowing these obstacles are possible, I want to stick to my time estimates as nest I can to stay on track and have time to work on post MVPs over the weekend/on Monday. 
