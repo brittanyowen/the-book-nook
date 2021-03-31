@@ -40,7 +40,7 @@ The challenges I forsee going into project week include time management in terms
 
 #### Wireframes
 
-##### [TBN Wireframes on AdobeXD](https://xd.adobe.com/view/72cab5c8-b289-48cb-9de1-84955f3c751f-2799/?fullscreen)
+##### [TBN Wireframes on AdobeXD](https://xd.adobe.com/view/72cab5c8-b289-48cb-9de1-84955f3c751f-2799/)
 
 
 - Home/Books Screen
