@@ -1,5 +1,4 @@
 # The Book Nook
-the coziest corner of the web
 
 ## Overview
 
