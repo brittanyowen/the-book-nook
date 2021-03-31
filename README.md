@@ -18,18 +18,12 @@ My goal for this project is to create an intuitive web application that users wi
 ### Challenges
 The challenges I forsee going into project week include time management in terms of bug fixes, knowing when to ask for help, and hyperfixation on styling. Knowing these obstacles are possible, I want to stick to my time estimates as nest I can to stay on track and have time to work on post MVPs over the weekend/on Monday. 
 
-<br>
 
 ## MVP
 - Guests will be able to view the books and their details and signup for an account
 - Users will be able to log in, add a book to the database, edit/delete a book that they have created, view a book's details and reviews from other users, add a reivew to a book listing and edit/delete reviews they have created. 
 - Filter book index by tags
 - Search book index
-
-<br>
-
-
-<br>
 
 ### Libraries and Dependencies
 
@@ -42,7 +36,6 @@ The challenges I forsee going into project week include time management in terms
 |       jwt        | Ruby implementation of JSON Web Tokens |
 |      bcrypt      | Password hashing gem for Ruby |
 
-<br>
 
 ### Client (Front End)
 
@@ -74,9 +67,11 @@ The challenges I forsee going into project week include time management in terms
 
 - Mobile Resource Index
 
+
 #### Component Tree
 
 [TBN Component Tree](https://imgur.com/EsDZmjJ)
+
 
 #### Component Architecture
 
@@ -117,6 +112,7 @@ src
 
 ```
 
+
 #### Time Estimates
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
@@ -142,7 +138,6 @@ src
 | POST MVP - like a book  |    L     |     5 hrs      |      hrs     |     TBD     |
 | TOTAL               |          |     47 hrs      |      hrs     |     TBD     |
 
-<br>
 
 ### Server (Back End)
 
