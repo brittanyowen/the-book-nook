@@ -11,6 +11,7 @@ import {
   removeToken,
   verifyUser,
 } from "./services/auth";
+import BooksContainer from "./containers/BooksContainer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUp handleSignUp={handleSignUp} />
+          </Route>
+          <Route path="/">
+            <BooksContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>
