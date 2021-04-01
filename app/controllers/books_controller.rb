@@ -5,13 +5,14 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
-    render json: @books
+    render json: @books.limit(20)
   end
 
   # GET /books/1
   def show
     # @book = Book.find(params[:id])
-    render json: @book.limit(20), include: :reviews
+    @reviews = Review.where(book_id: @book)
+    render json: @book, include: @reviews
   end
 
   # POST /books
