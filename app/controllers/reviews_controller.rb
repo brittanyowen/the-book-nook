@@ -2,11 +2,11 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:update, :destroy]
 
   # GET /reviews
-  # def index
-  #   @book = Book.find(params[:book_id])
-  #   @reviews = Review.where(book_id: @book)
-  #   render json: @reviews
-  # end
+  def index
+    @book = Book.find(params[:book_id])
+    @reviews = Review.where(book_id: @book)
+    render json: @reviews
+  end
 
   # POST /reviews
   def create

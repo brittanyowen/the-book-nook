@@ -1,9 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 
 import Books from "../screens/Books"
 import BookDetails from "../screens/BookDetails"
+import BookCreate from "../screens/BookCreate"
 
 import { getAllBooks, postBook, putBook } from "../services/books"
 import { getAllReviews } from "../services/reviews"
@@ -13,6 +14,7 @@ function BooksContainer(props) {
   const [books, setBooks] = useState([]);
   const [reviews, setReviews] = useState([]);
   const { currentUser } = props
+  const history = useHistory();
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -30,11 +32,11 @@ function BooksContainer(props) {
     fetchReviews();
   }, []);
 
-  // const handleCreate = async (bookData) => {
-  //   const newBook = await postBook(bookData);
-  //   setBooks(prevState => [...prevState, newBook])
-  //   history.push('/books')
-  // }
+  const handleCreate = async (bookData) => {
+    const newBook = await postBook(bookData);
+    setBooks(prevState => [...prevState, newBook])
+    history.push('/')
+  }
 
   // const handleUpdate = async (id, bookData) => {
   //   const updatedBook = await putBook(id, bookData)
@@ -53,9 +55,15 @@ function BooksContainer(props) {
     <Switch>
         <Route path="/books/:id">
           <BookDetails
-            books={books}
+          books={books}
+          reviews={reviews}
           />
-        </Route>
+      </Route>
+      <Route path="/add">
+        <BookCreate
+          handleCreate={handleCreate}
+        />
+      </Route>
       <Route path="/">
         <Books
           books={books}
