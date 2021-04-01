@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authorize_request, except: [:index]
-  before_action :set_book, only: [:show, :update, :destroy]
+  before_action :set_book, only: [:update, :destroy]
 
   # GET /books
   def index
@@ -10,9 +10,10 @@ class BooksController < ApplicationController
 
   # GET /books/1
   def show
-    # @book = Book.find(params[:id])
+    @book = Book.find(params[:id])
     @reviews = Review.where(book_id: @book)
-    render json: @book, include: @reviews
+    render json: @book
+    # , include: @reviews
   end
 
   # POST /books

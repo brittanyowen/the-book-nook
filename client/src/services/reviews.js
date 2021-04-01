@@ -1,9 +1,9 @@
 import api from './api-config'
 
-// export const getAllReviews = async () => {
-//   const resp = await api.get('/books/${id}/reviews');
-//   return resp.data
-// }
+export const getAllReviews = async () => {
+  const resp = await api.get('/books/${id}/reviews');
+  return resp.data
+}
 
 export const postReview = async (bookId, reviewData) => {
   const resp = await api.post(`/books/${bookId}/reviews`, { review: reviewData }) 

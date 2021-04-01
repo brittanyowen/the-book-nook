@@ -5,13 +5,14 @@ import "./App.css";
 import Layout from "./layouts/Layout";
 import SignUp from "./screens/SignUp";
 import LogIn from "./screens/LogIn";
+import BooksContainer from "./containers/BooksContainer";
+
 import {
   loginUser,
   signUpUser,
   removeToken,
   verifyUser,
 } from "./services/auth";
-import BooksContainer from "./containers/BooksContainer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
