@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize_request, except: :create
+  # before_action :authorize_request, except: :create
   
   # POST /users
   def create
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       render json: {
         user: @user.attributes.except("password_digest"), 
         token: @token
-        }, status: :created, location: @user
+        }, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
