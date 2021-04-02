@@ -36,13 +36,13 @@ function BooksContainer(props) {
   const handleCreate = async (bookData) => {
     const newBook = await postBook(bookData);
     setBooks(prevState => [...prevState, newBook])
-    history.push('/')
+    history.push('/books')
   }
 
   const handleUpdate = async (id, bookData) => {
     const updatedBook = await putBook(id, bookData)
     setBooks(prevState => prevState.map(book => {
-      return bookData.id === Number(id) ? updatedBook : book
+      return book.id === Number(id) ? updatedBook : book
     }))
     history.push('/books')
   }
@@ -50,6 +50,7 @@ function BooksContainer(props) {
   const handleDelete = async (id) => {
     await destroyBook(id);
     setBooks(prevState => prevState.filter(book => book.id !== id))
+    history.push('/books')
   }
 
   return (

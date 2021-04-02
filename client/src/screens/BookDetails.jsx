@@ -15,13 +15,6 @@ function BookDetails(props) {
     fetchBook();
   }, []);
 
-  // useEffect(() => {
-  //   if (books.length) {
-  //     const oneBook = books.find((book) => book.id === Number(id));
-  //     setBook(oneBook)
-  //   }
-  // }, [books, id])
-
   return (
     <>
       <div className="book-details">
@@ -35,7 +28,7 @@ function BookDetails(props) {
           <Link to={`/books/${id}/edit`}>
             <button>EDIT</button>
           </Link>
-          <button onClick={handleDelete}>DELETE</button>
+          <button onClick={() => handleDelete(book.id)}>DELETE</button>
         </>
       )}
 
