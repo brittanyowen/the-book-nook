@@ -4,5 +4,5 @@ class Book < ApplicationRecord
   validates :image_url, presence: true
   validates :summary, presence: true, length: {maximum: 700}
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 end

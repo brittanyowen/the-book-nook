@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @book = Book.find(params[:book_id])
-    @reviews = Review.where(book_id: @book)
+    @reviews = Review.where(book_id: @book.id)
     render json: @reviews
   end
 

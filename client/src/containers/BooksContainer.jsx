@@ -5,14 +5,15 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import Books from "../screens/Books"
 import BookDetails from "../screens/BookDetails"
 import BookCreate from "../screens/BookCreate"
+import BookEdit from "../screens/BookEdit"
 
-import { getAllBooks, postBook, putBook } from "../services/books"
-import { getAllReviews } from "../services/reviews"
+import { getAllBooks, postBook, putBook, destroyBook } from "../services/books"
+// import { getAllReviews } from "../services/reviews"
 
 
 function BooksContainer(props) {
   const [books, setBooks] = useState([]);
-  const [reviews, setReviews] = useState([]);
+  // const [reviews, setReviews] = useState([]);
   const { currentUser } = props
   const history = useHistory();
 
@@ -24,13 +25,13 @@ function BooksContainer(props) {
     fetchBooks();
   }, []);
 
-  useEffect(() => {
-    const fetchReviews = async () => {
-      const reviewData = await getAllReviews();
-      setReviews(reviewData);
-    };
-    fetchReviews();
-  }, []);
+  // useEffect(() => {
+  //   const fetchReviews = async () => {
+  //     const reviewData = await getAllReviews();
+  //     setReviews(reviewData);
+  //   };
+  //   fetchReviews();
+  // }, []);
 
   const handleCreate = async (bookData) => {
     const newBook = await postBook(bookData);
@@ -38,33 +39,40 @@ function BooksContainer(props) {
     history.push('/')
   }
 
-  // const handleUpdate = async (id, bookData) => {
-  //   const updatedBook = await putBook(id, bookData)
-  //   setBooks(prevState => prevState.map(food => {
-  //     return bookData.id === Number(id) ? updatedBook : book
-  //   }))
-  //   history.push('/books')
-  // }
+  const handleUpdate = async (id, bookData) => {
+    const updatedBook = await putBook(id, bookData)
+    setBooks(prevState => prevState.map(book => {
+      return bookData.id === Number(id) ? updatedBook : book
+    }))
+    history.push('/books')
+  }
 
-  // const handleDelete = async (id) => {
-  //   await destroyBook(id);
-  //   setBooks(prevState => prevState.filter(book => book.id !== id))
-  // }
+  const handleDelete = async (id) => {
+    await destroyBook(id);
+    setBooks(prevState => prevState.filter(book => book.id !== id))
+  }
 
   return (
     <Switch>
+        <Route path="/books/add">
+          <BookCreate
+            handleCreate={handleCreate}
+          />
+        </Route>
+      <Route path="/books/:id/edit">
+        <BookEdit
+          books={books}
+          handleUpdate={handleUpdate} />
+      </Route>
         <Route path="/books/:id">
           <BookDetails
           books={books}
-          reviews={reviews}
+          // reviews={reviews}
+          handleDelete={handleDelete}
+          currentUser={currentUser}
           />
       </Route>
-      <Route path="/add">
-        <BookCreate
-          handleCreate={handleCreate}
-        />
-      </Route>
-      <Route path="/">
+      <Route path="/books">
         <Books
           books={books}
           currentUser={currentUser}

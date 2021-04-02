@@ -7,6 +7,7 @@ import SignUp from "./screens/SignUp";
 import LogIn from "./screens/LogIn";
 import BooksContainer from "./containers/BooksContainer";
 
+
 import {
   loginUser,
   signUpUser,
@@ -55,7 +56,7 @@ function App() {
           <Route path="/signup">
             <SignUp handleSignUp={handleSignUp} />
           </Route>
-          <Route path="/">
+          <Route path="/books">
             <BooksContainer currentUser={currentUser} />
           </Route>
         </Switch>

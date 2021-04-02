@@ -9,7 +9,7 @@ function BookCreate(props) {
   })
   const { title, author, summary, image_url } = formData;
   const { handleCreate } = props; 
-
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -17,7 +17,7 @@ function BookCreate(props) {
       [name]: value,
     }))
   }
-
+  
   return (
     <form onSubmit={(e) => {
       e.preventDefault();

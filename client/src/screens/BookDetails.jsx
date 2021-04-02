@@ -1,36 +1,46 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getOneBook } from "../services/books";
-import Layout from "../layouts/Layout";
 
 function BookDetails(props) {
   const [book, setBook] = useState(null);
-  const { id } = useParams(); 
-
-  // useEffect(() => {
-  //   if (books.length) {
-  //     const oneBook = books.find((book) => book.id === Number(id))
-  //     setBook(oneBook)
-  //   }
-  // }, [books, id])
+  const { id } = useParams();
+  const {currentUser, handleDelete} = props
 
   useEffect(() => {
     const fetchBook = async () => {
       const bookData = await getOneBook(id);
-      setBook(bookData)
-    }
-    fetchBook()
-  }, [])
+      setBook(bookData);
+    };
+    fetchBook();
+  }, []);
+
+  // useEffect(() => {
+  //   if (books.length) {
+  //     const oneBook = books.find((book) => book.id === Number(id));
+  //     setBook(oneBook)
+  //   }
+  // }, [books, id])
 
   return (
-    <Layout>
+    <>
       <div className="book-details">
-            <img src={book?.image_url} alt={book?.title} />
-            <h3>{book?.title}</h3>
-            <h4>{book?.author}</h4>
-            <p>{book?.summary}</p>
+        <img src={book?.image_url} alt={book?.title} />
+        <h3>{book?.title}</h3>
+        <h4>by {book?.author}</h4>
+        <p>{book?.summary}</p>
       </div>
-    </Layout>
+      {currentUser?.id === book?.user_id && (
+        <>
+          <Link to={`/books/${id}/edit`}>
+            <button>EDIT</button>
+          </Link>
+          <button onClick={handleDelete}>DELETE</button>
+        </>
+      )}
+
+      <div>Reviews!</div>
+      </>
   );
 }
 
