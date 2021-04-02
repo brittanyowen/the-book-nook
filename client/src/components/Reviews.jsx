@@ -6,7 +6,7 @@ function Reviews(props) {
     <div>
       {reviews.map((review) => (
         <div key={review.id}>
-          <h6>{review.user_id}</h6>
+          <h6>{review.user?.username}</h6>
           <p>{review.content}</p>
         </div>
       ))}
