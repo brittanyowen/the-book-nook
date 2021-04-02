@@ -11,7 +11,6 @@ class BooksController < ApplicationController
   # GET /books/1
   def show
     @book = Book.find(params[:id])
-    # @reviews = Review.where(book_id: @book)
     render json: @book, include: :reviews
   end
 
@@ -28,7 +27,6 @@ class BooksController < ApplicationController
 
   # PATCH/PUT /books/1
   def update
-    # @book = Book.find(params[:id])
     if @book.update(book_params)
       render json: @book
     else
@@ -38,15 +36,13 @@ class BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
-    # @book = Book.find(params[:id])
     @book.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book
-    @book = Book.find(params[:id])
-      # @book = @current_user.books.find(params[:id])
+      @book = @current_user.books.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
