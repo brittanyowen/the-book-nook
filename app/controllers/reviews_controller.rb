@@ -3,15 +3,16 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   def index
+    # @user = User.find(params[:user_id])
     @book = Book.find(params[:book_id])
     @reviews = Review.where(book_id: @book.id)
-    render json: @reviews
+    render json: @reviews, include: :user
   end
 
   # POST /reviews
   def create
     @review = Review.new(review_params)
-
+# @review = @book.reviews.create(review_params) ? 
     if @review.save
       render json: @review, status: :created, location: @review
     else

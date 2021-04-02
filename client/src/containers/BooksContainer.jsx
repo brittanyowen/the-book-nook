@@ -8,12 +8,10 @@ import BookCreate from "../screens/BookCreate"
 import BookEdit from "../screens/BookEdit"
 
 import { getAllBooks, postBook, putBook, destroyBook } from "../services/books"
-// import { getAllReviews } from "../services/reviews"
 
 
 function BooksContainer(props) {
   const [books, setBooks] = useState([]);
-  // const [reviews, setReviews] = useState([]);
   const { currentUser } = props
   const history = useHistory();
 
@@ -24,14 +22,6 @@ function BooksContainer(props) {
     };
     fetchBooks();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchReviews = async () => {
-  //     const reviewData = await getAllReviews();
-  //     setReviews(reviewData);
-  //   };
-  //   fetchReviews();
-  // }, []);
 
   const handleCreate = async (bookData) => {
     const newBook = await postBook(bookData);
@@ -68,7 +58,6 @@ function BooksContainer(props) {
         <Route path="/books/:id">
           <BookDetails
           books={books}
-          // reviews={reviews}
           handleDelete={handleDelete}
           currentUser={currentUser}
           />

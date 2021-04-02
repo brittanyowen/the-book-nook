@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getOneBook } from "../services/books";
+import { getAllReviews } from "../services/reviews";
+
+import Reviews from "../components/Reviews"
 
 function BookDetails(props) {
   const [book, setBook] = useState(null);
+  const [reviews, setReviews] = useState([]);
   const { id } = useParams();
   const {currentUser, handleDelete} = props
 
@@ -13,6 +17,14 @@ function BookDetails(props) {
       setBook(bookData);
     };
     fetchBook();
+  }, []);
+
+  useEffect(() => {
+    const fetchReviews = async (bookId) => {
+      const reviewData = await getAllReviews(bookId);
+      setReviews(reviewData);
+    };
+    fetchReviews(id);
   }, []);
 
   return (
@@ -33,6 +45,9 @@ function BookDetails(props) {
       )}
 
       <div>Reviews!</div>
+      <Reviews
+        reviews={reviews}
+      />
       </>
   );
 }
