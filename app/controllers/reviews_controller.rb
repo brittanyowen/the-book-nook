@@ -8,6 +8,12 @@ class ReviewsController < ApplicationController
     render json: @reviews, include: :user
   end
 
+  #GET /reviews/1
+  def show
+    @review = Review.find(params[:id])
+    render json: @review 
+  end
+
   # POST /reviews
   def create
     @review = Review.new(review_params)
@@ -29,13 +35,13 @@ class ReviewsController < ApplicationController
 
   # DELETE /reviews/1
   def destroy
-    @review.destroy
+      @review.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
-      @review = @current_user.reviews.find(params[:id])
+      @review = Review.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

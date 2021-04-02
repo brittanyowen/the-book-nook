@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from "react-router-dom"; 
+// import { useHistory } from "react-router-dom"; 
 import ReviewCreate from "../components/ReviewCreate"
 import Reviews from "../components/Reviews"
 import { getAllReviews, destroyReview, putReview, postReview } from '../services/reviews';
@@ -7,7 +7,7 @@ import { getAllReviews, destroyReview, putReview, postReview } from '../services
 function ReviewsContainer(props) {
   const { book, id, currentUser } = props;
   const [reviews, setReviews] = useState([])
-  const history = useHistory(); 
+  // const history = useHistory(); 
 
   useEffect(() => {
     const fetchReviews = async (bookId) => {
@@ -20,7 +20,6 @@ function ReviewsContainer(props) {
   const reviewCreate = async (bookId, reviewData) => {
     const newReview = await postReview(bookId, reviewData);
     setReviews((prevState) => [...prevState, newReview]);
-    history.push(`/books`);
   };
 
   const reviewUpdate = async (bookId, id, reviewData) => {
@@ -33,13 +32,12 @@ function ReviewsContainer(props) {
   const reviewDelete = async (bookId, id) => {
     await destroyReview(bookId, id);
     setReviews(prevState => prevState.filter(review => review.id !== id))
-    
   }
 
   return (
     <div className="reviews-container">
       <ReviewCreate book={book} reviews={reviews} reviewCreate={reviewCreate} currentUser={currentUser}/>
-      <Reviews reviews={reviews} reviewUpdate={reviewUpdate} reviewDelete={reviewDelete}/>
+      <Reviews book={book} reviews={reviews} currentUser={currentUser} reviewUpdate={reviewUpdate} reviewDelete={reviewDelete}/>
     </div>
   );
 }
