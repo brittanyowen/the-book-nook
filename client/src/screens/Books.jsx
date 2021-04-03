@@ -3,21 +3,17 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 
 function Books(props) {
-  const { books, currentUser } = props;
+  const { id, title, image_url, currentUser } = props;
   return (
-    <div>
-      {books.map((book) => (
-        <div key={book.id}>
-          {currentUser ? (
-            <Link to={`/books/${book.id}`}>
-              <Card title={book.title} image={book.image_url} />
-            </Link>
-          ) : (
-            <Card title={book.title} image={book.image_url} />
-          )}
-        </div>
-      ))}
-    </div>
+      <div>
+        {currentUser ? (
+          <Link to={`/books/${id}`}>
+            <Card title={title} image={image_url} />
+          </Link>
+        ) : (
+          <Card title={title} image={image_url} />
+        )}
+      </div>
   );
 }
 
