@@ -22,10 +22,12 @@ function BookDetails(props) {
       <div className="book-details">
         <img src={book?.image_url} alt={book?.title} />
         <div className="book-details2">
-          <h3>{book?.title}</h3>
-          <h4>by {book?.author}</h4>
-          <br />
+          <div>
+            <h5>{book?.title}</h5>
+            <h4>by {book?.author}</h4>
+            <br></br>
           <p>{book?.summary}</p>
+          </div>
           {currentUser?.id === book?.user_id && (
             <div className="details-buttons">
               <Link to={`/books/${id}/edit`}>

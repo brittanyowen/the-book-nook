@@ -5,6 +5,8 @@
   border: solid black 1px;
   background-color: rgba(255, 255, 255, 1); 
   text-align: left;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
 }
 
 .review {
@@ -13,8 +15,9 @@
   padding: 10px; 
 }
 
-.review-buttons {
-  
+h6 {
+  font-size: 125%;
+  font-weight: bold;
 }
 
 .create-review {

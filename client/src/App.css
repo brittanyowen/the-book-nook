@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Cutive Mono', monospace;
 }
 
 button {
@@ -12,6 +13,15 @@ button {
 
 button:hover {
   background-color: #f8edeb;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black; 
 }
 
 .layout {
@@ -32,6 +42,16 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 400px;
+}
+
+.nav-details p {
+  font-size: 35px;
+}
+
+.app-name {
+  text-align: left;
 }
 
 .children {

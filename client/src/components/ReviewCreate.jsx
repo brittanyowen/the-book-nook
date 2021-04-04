@@ -26,7 +26,9 @@ function ReviewCreate(props) {
       }}
     >
       <label>
+        <h6>
         What did you think of {book?.title}?
+        </h6>
         <br></br>
         <textarea
           type="text"

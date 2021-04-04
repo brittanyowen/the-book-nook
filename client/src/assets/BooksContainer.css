@@ -33,17 +33,31 @@
 
 .book-details {
   display: flex;
-  /* align-items: space-between; */
   text-align: left;
-  width: 700px;
+  max-width: 700px;
   margin: 70px auto;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  line-height: 150%;
 }
 
 .book-details2 {
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  margin-left: 10px;
+}
+
+.book-details p {
+  text-indent: 3ch; 
+  text-align: justify;
 }
 
 .details-buttons {
   text-align: right;
+}
+
+h5 {
+  font-size: 150%; 
+  font-weight: bold; 
 }

@@ -127,13 +127,13 @@ src
 | Login and SignUp Screens, test with seeded admin user |    H     |     2 hrs      |     1 hrs     |     TBD     |
 | Framework for BooksContainer and App.js |    H     |     1 hrs      |     1 hrs     |     TBD     |
 | Build Books screen and BookCard to view all books, test with seeded data |    H     |     3 hrs      |     2 hrs     |     TBD     |
-| BookDetails screen |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| BookDetails screen |    H     |     3 hrs      |     3 hrs     |     TBD     |
 | BookCreate/BookEdit screens |    H     |     3 hrs      |     3 hrs     |     TBD     |
-| Reviews/ReviewCard components, test with seeded reviews |    H     |     3 hrs      |      hrs     |     TBD     |
-| Build ReviewCreate form component |    H     |     2 hrs      |      hrs     |     TBD     |
-| Search component on Books screen |    H     |     3 hrs      |      hrs     |     TBD     |
+| Reviews/ReviewCard components, test with seeded reviews |    H     |     3 hrs      |     2 hrs     |     TBD     |
+| Build ReviewCreate form component |    H     |     2 hrs      |     3 hrs     |     TBD     |
+| Search component on Books screen |    H     |     3 hrs      |     2 hrs     |     TBD     |
 | Filter component using tags table on Books screen |    H     |     3 hrs      |      hrs     |     TBD     |
-| CSS |    M     |     3 hrs      |      hrs     |     TBD     |
+| CSS |    M     |     3 hrs      |     3 hrs     |     TBD     |
 | Media Queries |    H     |     2 hrs      |      hrs     |     TBD     |
 | POST MVP - like a book  |    L     |     5 hrs      |      hrs     |     TBD     |
 | TOTAL               |          |     47 hrs      |      hrs     |     TBD     |

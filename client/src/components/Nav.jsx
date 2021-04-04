@@ -9,7 +9,8 @@ function Nav(props) {
     <div className="nav">
       <div className="nav-details">
       <Link to="/">
-        <p>The Book Nook</p>
+          <p className="app-name">The<br></br>Book<br></br>Nook</p>
+          <br></br><br></br>
       </Link>
       {currentUser ? (
         <>
