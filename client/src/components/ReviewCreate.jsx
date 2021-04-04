@@ -19,7 +19,7 @@ function ReviewCreate(props) {
     }));
   };
   return (
-    <form
+    <form className="create-review"
       onSubmit={(e) => {
         e.preventDefault();
         reviewCreate(params.id, reviewData);
@@ -27,8 +27,11 @@ function ReviewCreate(props) {
     >
       <label>
         What did you think of {book?.title}?
-        <input
+        <br></br>
+        <textarea
           type="text"
+          rows={10}
+          cols={78}
           name="content"
           value={content}
           onChange={handleChange}

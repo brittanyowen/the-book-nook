@@ -1,0 +1,49 @@
+.search {
+  align-items: flex-end;
+  height: 40px;
+  margin: 30px 50px 20px 0px;
+}
+
+.search input {
+  width: 300px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.books {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin: 20px;
+  border: grey solid 1px;
+  transition: 250ms all;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.book-details {
+  display: flex;
+  /* align-items: space-between; */
+  text-align: left;
+  width: 700px;
+  margin: 70px auto;
+}
+
+.book-details2 {
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+.details-buttons {
+  text-align: right;
+}

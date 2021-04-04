@@ -8,7 +8,7 @@ function Reviews(props) {
   return (
     <div>
       {reviews.map((review) => (
-        <div key={review.id}>
+        <div className="review" key={review.id}>
           <h6>{review.user?.username}</h6>
           <p>{review.content}</p>
           {currentUser?.id === review?.user_id && (

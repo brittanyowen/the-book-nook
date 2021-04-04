@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getOneBook } from "../services/books";
 
-import ReviewsContainer from "../containers/ReviewsContainer"
+import ReviewsContainer from "../containers/ReviewsContainer";
 
 function BookDetails(props) {
   const [book, setBook] = useState(null);
   const { id } = useParams();
-  const {currentUser, handleDelete} = props
+  const { currentUser, handleDelete } = props;
 
   useEffect(() => {
     const fetchBook = async () => {
@@ -21,22 +21,23 @@ function BookDetails(props) {
     <>
       <div className="book-details">
         <img src={book?.image_url} alt={book?.title} />
-        <h3>{book?.title}</h3>
-        <h4>by {book?.author}</h4>
-        <p>{book?.summary}</p>
+        <div className="book-details2">
+          <h3>{book?.title}</h3>
+          <h4>by {book?.author}</h4>
+          <br />
+          <p>{book?.summary}</p>
+          {currentUser?.id === book?.user_id && (
+            <div className="details-buttons">
+              <Link to={`/books/${id}/edit`}>
+                <button>EDIT</button>
+              </Link>
+              <button onClick={() => handleDelete(book.id)}>DELETE</button>
+            </div>
+          )}
+        </div>
       </div>
-      {currentUser?.id === book?.user_id && (
-        <>
-          <Link to={`/books/${id}/edit`}>
-            <button>EDIT</button>
-          </Link>
-          <button onClick={() => handleDelete(book.id)}>DELETE</button>
-        </>
-      )}
-
-      <div>Reviews!</div>
-        <ReviewsContainer book={book} id={id} currentUser={currentUser}/>
-      </>
+      <ReviewsContainer book={book} id={id} currentUser={currentUser} />
+    </>
   );
 }
 

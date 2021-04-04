@@ -4,7 +4,7 @@ function Search(props) {
   // const { onSubmit, onChange } = props;
   
   return (
-    <form onSubmit={(e) => props.onSubmit(e)}>
+    <form className="search" onSubmit={(e) => props.onSubmit(e)}>
       <label>
       SEARCH
       <input

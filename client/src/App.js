@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useHistory, Switch, Route } from "react-router-dom";
 import "./App.css";
+import "./assets/BooksContainer.css"
+import "./assets/ReviewsContainer.css"
 // component imports
 import Layout from "./layouts/Layout";
 import SignUp from "./screens/SignUp";
