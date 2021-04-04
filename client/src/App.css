@@ -3,21 +3,8 @@
   font-family: 'Cutive Mono', monospace;
 }
 
-button {
-  background-color: #dbd6da;
-  width: 70px;
-  height: 30px;
-  border-radius: 3px;
-  border: 1px solid black;
-}
-
-button:hover {
-  background-color: #f8edeb;
-}
-
-a {
-  text-decoration: none;
-  color: black;
+a:hover, .logout:hover {
+  font-weight:bold;
 }
 
 a:visited {
@@ -29,50 +16,75 @@ a:visited {
   background-color: rgba(245, 245, 245, .7); 
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #f8edeb;
-  width: 20vw;
-  min-height: 100vh;
-}
-
-.nav-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 400px;
-}
-
-.nav-details p {
-  font-size: 35px;
-}
-
-.app-name {
-  text-align: left;
-}
-
 .children {
   width: 80vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  /* height: 100vh; */
 }
 
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  justify-content: space-evenly;
+  height: 80vh;
+  width: 500px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+form label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form input {
+  width: 65%;
+}
+
+form textarea {
+  width: 65%;
 }
 
 img {
   width: 250px;
 }
 
-.footer img {
-  height: 35px;
-  width: auto;
+input {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* button styling */
+
+button {
+  background-color: #dbd6da;
+  width: 70px;
+  height: 30px;
+  border: 1px solid black;
+  font-family: 'Raleway', sans-serif;
+}
+
+button:hover {
+  background-color: #f8edeb;
+}
+
+.logout {
+  font-family: 'Cutive Mono', monospace;
+  background-color: #f8edeb; 
+  border: none; 
+  height:auto;
+  width:auto;
+  font-size: 16px;
+  text-decoration: underline; 
+}
+
+.edit {
+  margin-right: 5px;
 }

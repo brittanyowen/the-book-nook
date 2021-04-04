@@ -7,6 +7,7 @@ function Search(props) {
     <form className="search" onSubmit={(e) => props.onSubmit(e)}>
       <label>
       SEARCH
+        </label>
       <input
         type="text"
         name="search"
@@ -14,7 +15,6 @@ function Search(props) {
         value={props.value}
         onChange={(e) => props.onChange(e)}
         />
-        </label>
     </form>
   );
 }

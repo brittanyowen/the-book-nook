@@ -31,7 +31,7 @@ function BookDetails(props) {
           {currentUser?.id === book?.user_id && (
             <div className="details-buttons">
               <Link to={`/books/${id}/edit`}>
-                <button>EDIT</button>
+                <button className="edit">EDIT</button>
               </Link>
               <button onClick={() => handleDelete(book.id)}>DELETE</button>
             </div>
@@ -39,6 +39,8 @@ function BookDetails(props) {
         </div>
       </div>
       <ReviewsContainer book={book} id={id} currentUser={currentUser} />
+      <br></br>
+      <br></br>
     </>
   );
 }

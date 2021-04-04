@@ -9,16 +9,18 @@ function Reviews(props) {
     <div>
       {reviews.map((review) => (
         <div className="review" key={review.id}>
+          <div>
           <h6>{review.user?.username}</h6>
-          <p>{review.content}</p>
           {currentUser?.id === review?.user_id && (
-            <>
+            <div>
             <Link to={`/books/${book?.id}/reviews/${review.id}`}>
-              <button onClick={() => handleOpen(review.id)}>EDIT</button>
+              <button className="edit" onClick={() => handleOpen(review.id)}>EDIT</button>
             </Link>
               <button onClick={() => reviewDelete(book?.id, review.id)}>DELETE</button>
-              </>
-          )}
+              </div>
+            )}
+            </div>
+          <p>{review.content}</p>
         </div>
       ))}
       {open && (

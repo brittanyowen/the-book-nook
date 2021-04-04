@@ -8,16 +8,19 @@ function Nav(props) {
   return (
     <div className="nav">
       <div className="nav-details">
-      <Link to="/">
+        <div className="tbn-logo">
+        <Link to="/">
+          <img className="logo" src="https://imgur.com/qeA3rui.png" alt="book spine icon"/>
           <p className="app-name">The<br></br>Book<br></br>Nook</p>
-          <br></br><br></br>
       </Link>
+        </div>
+        <div className="nav-options">
       {currentUser ? (
         <>
           <p>Hi, {currentUser.username}!</p>
           <Link to="/books/add">Add Book</Link>
           <Link to="/books">Explore</Link>
-          <button onClick={handleLogout}>Logout</button>
+          <button className="logout" onClick={handleLogout}>Logout</button>
         </>
       ) : (
         <>
@@ -25,6 +28,7 @@ function Nav(props) {
           <Link to="/signup">Sign Up</Link>
         </>
         )}
+        </div>
       </div>
       <Footer />
     </div>

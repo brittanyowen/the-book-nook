@@ -24,7 +24,7 @@ function SignUp(props) {
         handleSignUp(formData);
       }}
     >
-      <p>Sign Up</p>
+      <h3>Sign Up</h3>
       <label>
         Username:
         <input

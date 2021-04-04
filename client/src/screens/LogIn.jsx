@@ -23,7 +23,7 @@ function LogIn(props) {
         handleLogin(formData);
       }}
     >
-      <p>Log In</p>
+      <h3>Log In</h3>
       <label>
         Username:
         <input

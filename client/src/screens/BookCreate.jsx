@@ -53,7 +53,9 @@ function BookCreate(props) {
       </label>
       <label>
         Summary:
-        <input
+        <textarea
+          rows={10}
+          cols={78}
           type="text"
           name="summary"
           value={summary}

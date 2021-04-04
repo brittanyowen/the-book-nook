@@ -1,11 +1,16 @@
 .search {
-  align-items: flex-end;
-  height: 40px;
-  margin: 30px 50px 20px 0px;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 0vh;
+  width: 75vw;
+  margin: 50px auto;
+}
+
+.search label {
+  justify-content: flex-end;
 }
 
 .search input {
-  width: 300px;
   padding: 5px;
   margin-left: 10px;
 }
@@ -34,11 +39,15 @@
 .book-details {
   display: flex;
   text-align: left;
-  max-width: 700px;
+  max-width: 750px;
   margin: 70px auto;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   line-height: 150%;
+}
+
+.book-details img {
+  height: 400px;
 }
 
 .book-details2 {
