@@ -88,6 +88,11 @@ h5 {
     justify-content: center;
     width: 25%;
   }
-
-
 }
+
+@media screen and (max-width: 650px) {
+  .book-details {
+    max-width: 90vw;
+  }
+}
+
