@@ -84,3 +84,9 @@ h6 {
 .modal textarea {
   width: 99%;
 }
+
+@media screen and (max-width: 1000px) {
+  .reviews-container {
+    width: 600px;
+  }
+}
