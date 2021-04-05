@@ -165,4 +165,16 @@
     align-items: flex-start;
     text-align: left;
   }
+
+  .nav-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 20px;
+    margin-top:0;
+  }
+
+  .nav-options a {
+    font-size: 3vh;
+  }
 }
