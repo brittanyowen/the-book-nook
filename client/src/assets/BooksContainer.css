@@ -41,7 +41,7 @@
   text-align: left;
   max-width: 750px;
   margin: 70px auto;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   letter-spacing: 1px;
   line-height: 150%;
 }
@@ -58,7 +58,7 @@
 }
 
 .book-details p {
-  text-indent: 3ch; 
+  text-indent: 3ch;
   text-align: justify;
 }
 
@@ -67,10 +67,9 @@
 }
 
 h5 {
-  font-size: 150%; 
-  font-weight: bold; 
+  font-size: 150%;
+  font-weight: bold;
 }
-
 
 @media screen and (max-width: 1000px) {
   .book-details {
@@ -83,7 +82,7 @@ h5 {
     justify-content: center;
     width: 90vw;
   }
-  
+
   .search label {
     justify-content: center;
     width: 25%;
@@ -101,11 +100,11 @@ h5 {
     max-width: 90vw;
     flex-direction: column;
     align-items: center;
-    text-align:center;
+    text-align: center;
   }
 
   .book-details img {
-    margin-bottom:15px;
+    margin-bottom: 15px;
   }
 
   .card {

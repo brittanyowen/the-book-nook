@@ -1,23 +1,24 @@
 .App {
   text-align: center;
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
 }
 
 a {
   color: black;
 }
 
-a:hover, .logout:hover {
-  font-weight:bold;
+a:hover,
+.logout:hover {
+  font-weight: bold;
 }
 
 a:visited {
-  color: black; 
+  color: black;
 }
 
 .layout {
   display: flex;
-  background-color: rgba(245, 245, 245, .7); 
+  background-color: rgba(245, 245, 245, 0.7);
 }
 
 .children {
@@ -62,7 +63,7 @@ img {
 }
 
 input {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 /* button styling */
@@ -72,7 +73,7 @@ button {
   width: 70px;
   height: 30px;
   border: 1px solid black;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 button:hover {
@@ -80,49 +81,46 @@ button:hover {
 }
 
 .logout {
-  font-family: 'Cutive Mono', monospace;
-  background-color: #f8edeb; 
-  border: none; 
-  height:auto;
-  width:auto;
+  font-family: "Cutive Mono", monospace;
+  background-color: #f8edeb;
+  border: none;
+  height: auto;
+  width: auto;
   font-size: 16px;
-  text-decoration: underline; 
+  text-decoration: underline;
 }
 
 .edit {
   margin-right: 5px;
 }
 
-
 /* media queries */
 
 @media screen and (max-width: 830px) {
-.layout {
-  flex-direction: column; 
-}
+  .layout {
+    flex-direction: column;
+  }
 
-.children{
-  width: 100vw;
-}
-
+  .children {
+    width: 100vw;
+  }
 }
 
 @media screen and (max-width: 500px) {
   form {
     width: 90vw;
   }
-  
+
   form label {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   form input {
     width: 98%;
   }
-  
+
   form textarea {
     width: 98%;
   }
-
 }

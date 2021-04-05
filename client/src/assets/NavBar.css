@@ -135,10 +135,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     margin-right: 20px;
-    margin-top:0;
+    margin-top: 0;
   }
 
-  .options a, .options button, .guest-options a {
+  .options a,
+  .options button,
+  .guest-options a {
     font-size: 3vh;
   }
 
@@ -183,7 +185,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     margin-right: 0px;
-    margin-top:0;
+    margin-top: 0;
   }
 
   .nav-options a {
