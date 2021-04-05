@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useHistory, Switch, Route } from "react-router-dom";
+// styling imports
 import "./App.css";
 import "./assets/NavBar.css"
 import "./assets/BooksContainer.css"
@@ -9,7 +10,6 @@ import Layout from "./layouts/Layout";
 import SignUp from "./screens/SignUp";
 import LogIn from "./screens/LogIn";
 import BooksContainer from "./containers/BooksContainer";
-
 
 import {
   loginUser,

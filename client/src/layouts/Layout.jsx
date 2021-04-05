@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../components/Nav";
-// import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 
 function Layout(props) {
   const { currentUser, handleLogout } = props;
@@ -11,7 +11,9 @@ function Layout(props) {
       <div className="children">
       {props.children}
       </div>
-      {/* <Footer /> */}
+      <div className="footer2">
+      <Footer />
+      </div>
     </div>
   );
 }

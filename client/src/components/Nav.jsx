@@ -18,9 +18,11 @@ function Nav(props) {
       {currentUser ? (
         <>
           <p>Hi, {currentUser.username}!</p>
-          <Link to="/books/add">Add Book</Link>
-          <Link to="/books">Explore</Link>
-          <button className="logout" onClick={handleLogout}>Logout</button>
+          <div className="options">
+            <Link to="/books/add">Add Book</Link>
+            <Link to="/books">Explore</Link>
+            <button className="logout" onClick={handleLogout}>Logout</button>
+          </div>
         </>
       ) : (
         <>
@@ -30,7 +32,9 @@ function Nav(props) {
         )}
         </div>
       </div>
+      <div className="footer1">
       <Footer />
+      </div>
     </div>
   );
 }

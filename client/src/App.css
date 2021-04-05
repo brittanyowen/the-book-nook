@@ -88,3 +88,20 @@ button:hover {
 .edit {
   margin-right: 5px;
 }
+
+
+/* media queries */
+
+@media screen and (max-width: 800px) {
+.layout {
+  flex-direction: column; 
+}
+
+.children{
+  width: 100vw;
+}
+}
+
+@media screen and (max-width: 500px) {
+
+}
