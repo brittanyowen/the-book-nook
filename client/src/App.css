@@ -3,6 +3,10 @@
   font-family: 'Cutive Mono', monospace;
 }
 
+a {
+  color: black;
+}
+
 a:hover, .logout:hover {
   font-weight:bold;
 }
