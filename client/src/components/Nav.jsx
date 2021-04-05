@@ -37,10 +37,10 @@ function Nav(props) {
                 </div>
               </>
             ) : (
-              <>
+              <div className="guest-options">
                 <Link to="/login">Log In</Link>
                 <Link to="/signup">Sign Up</Link>
-              </>
+              </div>
             )}
           </div>
         )}

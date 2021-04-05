@@ -51,6 +51,14 @@
   margin-top: 30px;
 }
 
+.guest-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  margin-right: 20px;
+}
+
 .footer2 {
   display: none;
 }
@@ -117,6 +125,14 @@
     margin-top: 0px;
   }
 
+  .guest-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    margin-right: 20px;
+  }
+
   .nav-options p {
     display: none;
   }
@@ -130,7 +146,7 @@
     margin-top:0;
   }
 
-  .options a, .options button {
+  .options a, .options button, .guest-options a {
     font-size: 3vh;
   }
 
