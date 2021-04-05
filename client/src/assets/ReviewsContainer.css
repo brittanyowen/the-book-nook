@@ -71,3 +71,16 @@ h6 {
   background: white;
   padding: 30px;
 }
+
+.modal form {
+  height: 40vh;
+}
+
+.modal label {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal textarea {
+  width: 99%;
+}
