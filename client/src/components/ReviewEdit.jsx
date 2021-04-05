@@ -56,8 +56,10 @@ function ReviewEdit(props) {
               onChange={handleChange}
             />
           </label>
+          <div className="modal-buttons">
           <button className="edit">UPDATE</button>
         <button onClick={() => handleOpen(false)}>CANCEL</button>
+          </div>
         </form>
       </div>
       </div>

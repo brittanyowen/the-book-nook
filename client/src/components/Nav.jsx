@@ -20,7 +20,6 @@ function Nav(props) {
           <p>Hi, {currentUser.username}!</p>
           <div className="options">
             <Link to="/books/add">Add Book</Link>
-            <Link to="/books">Explore</Link>
             <button className="logout" onClick={handleLogout}>Logout</button>
           </div>
         </>

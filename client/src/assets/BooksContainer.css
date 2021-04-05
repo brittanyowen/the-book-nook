@@ -71,7 +71,7 @@ h5 {
   font-weight: bold; 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .search {
     justify-content: center;
     width: 90vw;
