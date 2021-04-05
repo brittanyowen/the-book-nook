@@ -19,7 +19,7 @@ function BookEdit(props) {
         title: bookItem.title,
         author: bookItem.author,
         summary: bookItem.summary,
-        image_url: bookItem.image_url
+        image_url: bookItem.image_url,
       });
     };
     if (books.length) {

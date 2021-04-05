@@ -10,16 +10,18 @@ function ReviewEdit(props) {
   const params = useParams();
   const { handleOpen, reviewUpdate, reviews, book } = props;
 
-  console.log(book?.id, params)
+  console.log(book?.id, params);
 
   useEffect(() => {
     const prefillReviewData = () => {
-      const reviewItem = reviews.find((review) => review?.id === Number(params.id));
-      console.log(reviewItem)
+      const reviewItem = reviews.find(
+        (review) => review?.id === Number(params.id)
+      );
+      console.log(reviewItem);
       setReviewData({
         content: reviewItem?.content,
         book_id: reviewItem?.book_id,
-        user_id: reviewItem?.user_id
+        user_id: reviewItem?.user_id,
       });
     };
     if (reviews?.length) {
@@ -37,12 +39,12 @@ function ReviewEdit(props) {
 
   return (
     <div className="modal-container" onClick={(e) => handleOpen(false)}>
-    <div className="modal" onClick={(e) => e.stopPropagation()}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
         <form
           onSubmit={(e) => {
             e.preventDefault();
             reviewUpdate(book?.id, params.id, reviewData);
-            handleOpen(false)
+            handleOpen(false);
           }}
         >
           <label>
@@ -57,12 +59,12 @@ function ReviewEdit(props) {
             />
           </label>
           <div className="modal-buttons">
-          <button className="edit">UPDATE</button>
-        <button onClick={() => handleOpen(false)}>CANCEL</button>
+            <button className="edit">UPDATE</button>
+            <button onClick={() => handleOpen(false)}>CANCEL</button>
           </div>
         </form>
       </div>
-      </div>
+    </div>
   );
 }
 

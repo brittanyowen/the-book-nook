@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {useParams} from "react-router-dom"
+import { useParams } from "react-router-dom";
 
 function ReviewCreate(props) {
   const { book, reviewCreate, currentUser } = props;
@@ -19,16 +19,15 @@ function ReviewCreate(props) {
     }));
   };
   return (
-    <form className="create-review"
+    <form
+      className="create-review"
       onSubmit={(e) => {
         e.preventDefault();
         reviewCreate(params.id, reviewData);
       }}
     >
       <label>
-        <h6>
-        What did you think of {book?.title}?
-        </h6>
+        <h6>What did you think of {book?.title}?</h6>
         <br></br>
         <textarea
           type="text"
@@ -40,7 +39,7 @@ function ReviewCreate(props) {
         />
       </label>
       <div>
-      <button>POST</button>
+        <button>POST</button>
       </div>
     </form>
   );

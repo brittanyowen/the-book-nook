@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from "react";
 
 function BookCreate(props) {
   const [formData, setFormData] = useState({
@@ -6,32 +6,29 @@ function BookCreate(props) {
     author: "",
     summary: "",
     image_url: "",
-  })
+  });
   const { title, author, summary, image_url } = formData;
-  const { handleCreate } = props; 
-  
+  const { handleCreate } = props;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
-    }))
-  }
-  
+    }));
+  };
+
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      handleCreate(formData);
-    }}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleCreate(formData);
+      }}
+    >
       <h3>Add A Book</h3>
       <label>
         Title:
-        <input
-          type="text"
-          name="title"
-          value={title}
-          onChange={handleChange}
-        />
+        <input type="text" name="title" value={title} onChange={handleChange} />
       </label>
       <label>
         Author:
@@ -62,7 +59,7 @@ function BookCreate(props) {
           onChange={handleChange}
         />
       </label>
-    <button>SAVE</button>
+      <button>SAVE</button>
     </form>
   );
 }

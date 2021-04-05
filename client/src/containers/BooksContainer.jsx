@@ -27,7 +27,10 @@ function BooksContainer(props) {
 
   const handleSearch = (e) => {
     const query = books.filter((book) => {
-      return book.title.toLowerCase().includes(e.target.value.toLowerCase()) || book.author.toLowerCase().includes(e.target.value.toLowerCase())
+      return (
+        book.title.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        book.author.toLowerCase().includes(e.target.value.toLowerCase())
+      );
     });
     setSearchResults(query);
   };
@@ -56,7 +59,7 @@ function BooksContainer(props) {
     history.push("/");
   };
 
-  const booksJSX = searchResults.map((book, index) => 
+  const booksJSX = searchResults.map((book, index) => (
     <Books
       key={index}
       id={book.id}
@@ -64,7 +67,7 @@ function BooksContainer(props) {
       image_url={book.image_url}
       currentUser={currentUser}
     />
-  );
+  ));
 
   return (
     <Switch>
@@ -82,7 +85,7 @@ function BooksContainer(props) {
         />
       </Route>
       <Route path="/">
-        <Search onSubmit={handleSubmit} onChange={handleSearch}/>
+        <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="books">{booksJSX}</div>
       </Route>
     </Switch>

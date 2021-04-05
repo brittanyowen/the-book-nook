@@ -26,7 +26,7 @@ function BookDetails(props) {
             <h5>{book?.title}</h5>
             <h4>by {book?.author}</h4>
             <br></br>
-          <p>{book?.summary}</p>
+            <p>{book?.summary}</p>
           </div>
           {currentUser?.id === book?.user_id && (
             <div className="details-buttons">
