@@ -37,7 +37,8 @@ function ReviewsContainer(props) {
   return (
     <div className="reviews-container">
       <ReviewCreate book={book} reviews={reviews} reviewCreate={reviewCreate} currentUser={currentUser}/>
-      <Reviews book={book} reviews={reviews} currentUser={currentUser} reviewUpdate={reviewUpdate} reviewDelete={reviewDelete}/>
+      <Reviews book={book} reviews={reviews} currentUser={currentUser} reviewUpdate={reviewUpdate} reviewDelete={reviewDelete} />
+      
     </div>
   );
 }

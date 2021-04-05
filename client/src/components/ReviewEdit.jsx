@@ -2,28 +2,30 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function ReviewEdit(props) {
-  const { handleOpen, reviewUpdate, currentUser, reviews } = props;
-  const {bookId, id} = useParams();
   const [reviewData, setReviewData] = useState({
     content: "",
-    // user_id: currentUser?.id,
-    // book_id: Number(params.id),
   });
+
   const { content } = reviewData;
+  const params = useParams();
+  const { handleOpen, reviewUpdate, reviews, book } = props;
+
+  console.log(book?.id, params)
+
   useEffect(() => {
     const prefillReviewData = () => {
-      const reviewItem = reviews.find((review) => review?.id === Number(id));
+      const reviewItem = reviews.find((review) => review?.id === Number(params.id));
       console.log(reviewItem)
       setReviewData({
         content: reviewItem?.content,
-        // user_id: reviewItem?.currentUser?.id,
-        // book_id: Number(reviewItem?.params?.id),
+        book_id: reviewItem?.book_id,
+        user_id: reviewItem?.user_id
       });
     };
-    if (reviews.length) {
+    if (reviews?.length) {
       prefillReviewData();
     }
-  }, [reviews, id]);
+  }, [reviews, params.id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,29 +36,31 @@ function ReviewEdit(props) {
   };
 
   return (
-    <div className="review-edit-container" onClick={(e) => handleOpen(false)}>
-      <div className="review-edit" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-container" onClick={(e) => handleOpen(false)}>
+    <div className="modal" onClick={(e) => e.stopPropagation()}>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            reviewUpdate(bookId, id, reviewData);
+            reviewUpdate(book?.id, params.id, reviewData);
             handleOpen(false)
           }}
         >
           <label>
             Edit Review:
-            <input
+            <textarea
               type="text"
+              rows={10}
+              cols={78}
               name="content"
               value={content}
               onChange={handleChange}
             />
           </label>
-          <button onClick={() => handleOpen(false)}>CANCEL</button>
-          <button type="submit">SAVE</button>
+          <button className="edit">UPDATE</button>
+        <button onClick={() => handleOpen(false)}>CANCEL</button>
         </form>
       </div>
-    </div>
+      </div>
   );
 }
 
