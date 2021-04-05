@@ -71,6 +71,13 @@ h5 {
   font-weight: bold; 
 }
 
+
+@media screen and (max-width: 1000px) {
+  .book-details {
+    max-width: 600px;
+  }
+}
+
 @media screen and (max-width: 830px) {
   .search {
     justify-content: center;
@@ -81,5 +88,6 @@ h5 {
     justify-content: center;
     width: 25%;
   }
+
 
 }
