@@ -117,23 +117,23 @@ src
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Backend set up: install gems, scaffold, clean up unnecessary routes and methods, add join table |    H     |     3 hrs      |      hrs     |     hrs    |
-| Test routes and debug |    H     |     2 hrs      |      hrs     |     TBD     |
-| Authorization |    H     |     3 hrs      |      hrs     |     TBD     |
-| Set up React App framework and folder structure, install dependencies, delete boilerplate, add CSS reset code to index.css  |    H     |     1 hrs      |      hrs     |     TBD     |
-| Services folder: build api-config and auth files |    H     |     2 hrs      |      hrs     |     TBD     |
-| Services folder: build books, reviews, and tags |    H     |     2 hrs      |      hrs     |     TBD     |
-| Layout screen and Nav/Footer components |    H     |     1 hrs      |      hrs     |     TBD     |
-| Login and SignUp Screens, test with seeded admin user |    H     |     2 hrs      |      hrs     |     TBD     |
-| Framework for BooksContainer and App.js |    H     |     1 hrs      |      hrs     |     TBD     |
-| Build Books screen and BookCard to view all books, test with seeded data |    H     |     3 hrs      |      hrs     |     TBD     |
-| BookDetails screen |    H     |     3 hrs      |      hrs     |     TBD     |
-| BookCreate/BookEdit screens |    H     |     3 hrs      |      hrs     |     TBD     |
-| Reviews/ReviewCard components, test with seeded reviews |    H     |     3 hrs      |      hrs     |     TBD     |
-| Build ReviewCreate form component |    H     |     2 hrs      |      hrs     |     TBD     |
-| Search component on Books screen |    H     |     3 hrs      |      hrs     |     TBD     |
+| Backend set up: install gems, scaffold, clean up unnecessary routes and methods, add join table |    H     |     3 hrs      |     1 hrs     |     hrs    |
+| Test routes and debug |    H     |     2 hrs      |     1 hrs     |     TBD     |
+| Authorization |    H     |     3 hrs      |     2 hrs     |     TBD     |
+| Set up React App framework and folder structure, install dependencies, delete boilerplate, add CSS reset code to index.css  |    H     |     1 hrs      |     1 hrs     |     TBD     |
+| Services folder: build api-config and auth files |    H     |     2 hrs      |     1 hrs     |     TBD     |
+| Services folder: build books and reviews |    H     |     2 hrs      |     1 hrs     |     TBD     |
+| Layout screen and Nav/Footer components |    H     |     1 hrs      |     1 hrs     |     TBD     |
+| Login and SignUp Screens, test with seeded admin user |    H     |     2 hrs      |     1 hrs     |     TBD     |
+| Framework for BooksContainer and App.js |    H     |     1 hrs      |     1 hrs     |     TBD     |
+| Build Books screen and BookCard to view all books, test with seeded data |    H     |     3 hrs      |     2 hrs     |     TBD     |
+| BookDetails screen |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| BookCreate/BookEdit screens |    H     |     3 hrs      |     3 hrs     |     TBD     |
+| Reviews/ReviewCard components, test with seeded reviews |    H     |     3 hrs      |     2 hrs     |     TBD     |
+| Build ReviewCreate form component |    H     |     2 hrs      |     3 hrs     |     TBD     |
+| Search component on Books screen |    H     |     3 hrs      |     2 hrs     |     TBD     |
 | Filter component using tags table on Books screen |    H     |     3 hrs      |      hrs     |     TBD     |
-| CSS |    M     |     3 hrs      |      hrs     |     TBD     |
+| CSS |    M     |     3 hrs      |     3 hrs     |     TBD     |
 | Media Queries |    H     |     2 hrs      |      hrs     |     TBD     |
 | POST MVP - like a book  |    L     |     5 hrs      |      hrs     |     TBD     |
 | TOTAL               |          |     47 hrs      |      hrs     |     TBD     |

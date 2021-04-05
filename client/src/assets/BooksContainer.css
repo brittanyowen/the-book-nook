@@ -1,0 +1,85 @@
+.search {
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 0vh;
+  width: 75vw;
+  margin: 50px auto;
+}
+
+.search label {
+  justify-content: flex-end;
+}
+
+.search input {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+.books {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+  margin: 20px;
+  border: grey solid 1px;
+  transition: 250ms all;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.book-details {
+  display: flex;
+  text-align: left;
+  max-width: 750px;
+  margin: 70px auto;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  line-height: 150%;
+}
+
+.book-details img {
+  height: 400px;
+}
+
+.book-details2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.book-details p {
+  text-indent: 3ch; 
+  text-align: justify;
+}
+
+.details-buttons {
+  text-align: right;
+}
+
+h5 {
+  font-size: 150%; 
+  font-weight: bold; 
+}
+
+@media screen and (max-width: 500px) {
+  .search {
+    justify-content: center;
+    width: 90vw;
+  }
+  
+  .search label {
+    justify-content: center;
+    width: 25%;
+  }
+
+}
