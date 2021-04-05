@@ -107,4 +107,8 @@ h5 {
   .book-details img {
     margin-bottom:15px;
   }
+
+  .card {
+    margin: 10px 0px;
+  }
 }

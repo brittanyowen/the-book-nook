@@ -13,11 +13,11 @@ const COLORS = {
 const MenuLabel = styled.label`
   background-color: ${COLORS.primaryLight};
   position: fixed;
-  top: 0.4rem;
-  right: .4rem;
+  top: 20px;
+  right: 20px;
   border-radius: 0%;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 5vh;
+  width: auto;
   cursor: pointer;
   z-index: 1000;
   text-align: center;
