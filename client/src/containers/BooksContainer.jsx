@@ -61,7 +61,6 @@ function BooksContainer(props) {
       key={index}
       id={book.id}
       title={book.title}
-      // author={book.author}
       image_url={book.image_url}
       currentUser={currentUser}
     />
@@ -82,7 +81,7 @@ function BooksContainer(props) {
           currentUser={currentUser}
         />
       </Route>
-      <Route path="/books">
+      <Route path="/">
         <Search onSubmit={handleSubmit} onChange={handleSearch}/>
         <div className="books">{booksJSX}</div>
       </Route>
