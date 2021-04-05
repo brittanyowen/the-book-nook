@@ -130,6 +130,10 @@
     margin-top:0;
   }
 
+  .options a, .options button {
+    font-size: 3vh;
+  }
+
   .footer1 {
     display: none;
   }
