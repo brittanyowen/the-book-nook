@@ -37,7 +37,7 @@ function BooksContainer(props) {
   const handleCreate = async (bookData) => {
     const newBook = await postBook(bookData);
     setBooks((prevState) => [...prevState, newBook]);
-    history.push("/books");
+    history.push("/");
   };
 
   const handleUpdate = async (id, bookData) => {
@@ -47,13 +47,13 @@ function BooksContainer(props) {
         return book.id === Number(id) ? updatedBook : book;
       })
     );
-    history.push("/books");
+    history.push("/");
   };
 
   const handleDelete = async (id) => {
     await destroyBook(id);
     setBooks((prevState) => prevState.filter((book) => book.id !== id));
-    history.push("/books");
+    history.push("/");
   };
 
   const booksJSX = searchResults.map((book, index) => 
