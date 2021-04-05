@@ -6,23 +6,21 @@ import styled from "styled-components";
 // CSS-Tricks tutorial https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
 
 const COLORS = {
-  primaryDark: '#707070',
-  primaryLight: '#f8edeb',
-}
+  primaryDark: "#707070",
+  primaryLight: "#f8edeb",
+};
 
 const MenuLabel = styled.label`
   background-color: ${COLORS.primaryLight};
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  margin-right: 20px;
   border-radius: 0%;
   height: 5vh;
   width: auto;
   cursor: pointer;
   z-index: 1000;
   text-align: center;
-  `;
-  
+`;
+
 const NavBackground = styled.div`
   position: fixed;
   top: 2rem;
@@ -31,11 +29,11 @@ const NavBackground = styled.div`
   width: 3rem;
   border-radius: 50%;
   z-index: 600;
-  `;
+`;
 
 const Icon = styled.span`
   position: relative;
-  top: -.4rem;
+  top: -0.8rem;
   background-color: ${(props) => (props.clicked ? "transparent" : "#03045E")};
 
   width: 1.75rem;
@@ -68,8 +66,7 @@ const Icon = styled.span`
   ${MenuLabel}:hover &::after {
     top: ${(props) => (props.clicked ? "0" : "1rem")};
   }
-  `;
-
+`;
 
 const Navigation = styled.nav`
   height: 100vh;
@@ -84,39 +81,14 @@ const Navigation = styled.nav`
 
 const List = styled.ul`
   background-color: ${COLORS.primaryLight};
-  position: absolute;
-  list-style: none;
-  top: 30%;
+  position: fixed;
+  top: 8%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
   padding-inline-start: 0px;
 `;
-
-// const ItemLink = styled(NavLink)`
-//   display: inline-block;
-//   font-size: 3rem;
-//   font-weight: 300;
-//   text-decoration: none;
-//   color: ${COLORS.primaryLight};
-//   padding: 1rem 2rem;
-//   background-image: linear-gradient(
-//     120deg,
-//     transparent 0%,
-//     transparent 50%,
-//     #fff 50%
-//     );
-//     background-size: 240%;
-//     transition: all 0.4s;
-//     &:hover,
-//     &:active {
-//       background-position: 100%;
-//       color: ${COLORS.primaryLight};
-//       transform: translateX(1rem);
-//     }
-//     `;
-
 
 function BurgerMenu(props) {
   const { currentUser, handleLogout } = props;
@@ -131,26 +103,25 @@ function BurgerMenu(props) {
 
       <Navigation clicked={click}>
         <List>
-
-        <div className="nav-options">
-          {currentUser ? (
-            <>
-              <p>Hi, {currentUser.username}!</p>
-              <div className="options">
-                <Link to="/books/add">Add Book</Link>
-                <button className="logout" onClick={handleLogout}>
-                  Logout
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <Link to="/login">Log In</Link>
-              <Link to="/signup">Sign Up</Link>
-            </>
-          )}
-        </div>
-          </List>
+          <div className="nav-options">
+            {currentUser ? (
+              <>
+                <p>Hi, {currentUser.username}!</p>
+                <div className="options">
+                  <Link to="/books/add">Add Book</Link>
+                  <button className="logout" onClick={handleLogout}>
+                    Logout
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="/login">Log In</Link>
+                <Link to="/signup">Sign Up</Link>
+              </>
+            )}
+          </div>
+        </List>
       </Navigation>
     </>
   );
