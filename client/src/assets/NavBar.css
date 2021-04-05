@@ -125,14 +125,6 @@
     margin-top: 0px;
   }
 
-  .guest-options {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-    margin-right: 20px;
-  }
-
   .nav-options p {
     display: none;
   }
@@ -182,15 +174,23 @@
     text-align: left;
   }
 
+  .options {
+    margin-right: 0px;
+  }
+
   .nav-options {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-right: 20px;
+    margin-right: 0px;
     margin-top:0;
   }
 
   .nav-options a {
     font-size: 3vh;
+  }
+
+  .guest-options {
+    margin-right: 0px;
   }
 }
