@@ -71,6 +71,10 @@ h5 {
   font-weight: bold;
 }
 
+.tagline2 {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .book-details {
     max-width: 600px;
@@ -96,6 +100,11 @@ h5 {
 }
 
 @media screen and (max-width: 550px) {
+  .tagline2 {
+    display: inherit;
+    margin: 10px auto 0;
+  }
+  
   .book-details {
     max-width: 90vw;
     flex-direction: column;

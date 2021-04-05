@@ -31,6 +31,10 @@
   font-size: 2.7vw;
 }
 
+.tagline {
+  font-size: .9vw;
+}
+
 .nav-options {
   display: flex;
   flex-direction: column;
@@ -119,6 +123,11 @@
     font-size: 4.5vh;
   }
 
+  .tagline {
+    font-size: 1.4vh;
+    padding-left: 10px;
+  }
+
   .nav-options {
     flex-direction: row;
     align-items: center;
@@ -195,4 +204,9 @@
   .guest-options {
     margin-right: 0px;
   }
+
+  .tagline {
+    display: none;
+  }
+
 }

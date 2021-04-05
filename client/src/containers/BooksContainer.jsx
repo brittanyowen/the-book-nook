@@ -85,6 +85,7 @@ function BooksContainer(props) {
         />
       </Route>
       <Route path="/">
+        <p className="tagline2">Find your next favorite book</p>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="books">{booksJSX}</div>
       </Route>

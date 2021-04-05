@@ -28111,3 +28111,58 @@ Completed 200 OK in 129ms (Views: 3.4ms | ActiveRecord: 40.1ms | Allocations: 13
 Completed 200 OK in 168ms (Views: 0.5ms | ActiveRecord: 92.0ms | Allocations: 14639)
 
 
+Started GET "/auth/verify" for ::1 at 2021-04-05 17:54:40 -0500
+Started GET "/books" for ::1 at 2021-04-05 17:54:40 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 241)
+
+
+  [1m[36mBook Load (6.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 78ms (Views: 1.5ms | ActiveRecord: 33.7ms | Allocations: 12327)
+
+
+Started GET "/books" for ::1 at 2021-04-05 18:03:27 -0500
+Processing by BooksController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-04-05 18:03:27 -0500
+Processing by AuthenticationController#verify as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.4ms | Allocations: 173)
+
+
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 85ms (Views: 1.5ms | ActiveRecord: 58.6ms | Allocations: 4267)
+
+
+Started GET "/books" for ::1 at 2021-04-05 18:05:31 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1144)
+
+
+Started GET "/books" for ::1 at 2021-04-05 18:05:40 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 1168)
+
+
+Started GET "/books" for ::1 at 2021-04-05 18:05:45 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.2ms | Allocations: 1164)
+
+
+Started GET "/books" for ::1 at 2021-04-05 18:05:46 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1144)
+
+
