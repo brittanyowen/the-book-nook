@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useHistory, Switch, Route } from "react-router-dom";
 // styling imports
 import "./App.css";
-import "./assets/NavBar.css"
-import "./assets/BooksContainer.css"
-import "./assets/ReviewsContainer.css"
+import "./assets/NavBar.css";
+import "./assets/BooksContainer.css";
+import "./assets/ReviewsContainer.css";
 // component imports
 import Layout from "./layouts/Layout";
 import SignUp from "./screens/SignUp";
