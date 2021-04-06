@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
-    render json: @books.limit(20).sort_by{|x| x[:created_at]}
+    render json: @books.limit(20).sort_by{|x| x[:created_at]}.reverse
   end
 
   # GET /books/1

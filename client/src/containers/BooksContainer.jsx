@@ -14,6 +14,7 @@ function BooksContainer(props) {
   const [books, setBooks] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const { currentUser } = props;
+  const [toggleFetch, setToggleFetch] = useState(false)
   const history = useHistory();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ function BooksContainer(props) {
       setSearchResults(bookData);
     };
     fetchBooks();
-  }, []);
+  }, [toggleFetch]);
 
   const handleSearch = (e) => {
     const query = books.filter((book) => {
@@ -35,11 +36,17 @@ function BooksContainer(props) {
     setSearchResults(query);
   };
 
-  const handleSubmit = (e) => e.preventDefault();
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setToggleFetch((curr) => !curr)
+    
+  };
+  
   const handleCreate = async (bookData) => {
     const newBook = await postBook(bookData);
     setBooks((prevState) => [...prevState, newBook]);
+    setToggleFetch((curr) => !curr)
+
     history.push("/");
   };
 
@@ -50,12 +57,14 @@ function BooksContainer(props) {
         return book.id === Number(id) ? updatedBook : book;
       })
     );
+    setToggleFetch((curr) => !curr)
     history.push("/");
   };
 
   const handleDelete = async (id) => {
     await destroyBook(id);
     setBooks((prevState) => prevState.filter((book) => book.id !== id));
+    setToggleFetch((curr) => !curr)
     history.push("/");
   };
 
@@ -85,6 +94,7 @@ function BooksContainer(props) {
         />
       </Route>
       <Route path="/">
+        <p className="tagline2">Find your next favorite book</p>
         <Search onSubmit={handleSubmit} onChange={handleSearch} />
         <div className="books">{booksJSX}</div>
       </Route>

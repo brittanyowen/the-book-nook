@@ -24,6 +24,7 @@ function ReviewCreate(props) {
       onSubmit={(e) => {
         e.preventDefault();
         reviewCreate(params.id, reviewData);
+        setReviewData("")
       }}
     >
       <label>

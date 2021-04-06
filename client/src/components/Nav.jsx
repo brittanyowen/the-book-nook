@@ -21,6 +21,8 @@ function Nav(props) {
               The<br></br>Book<br></br>Nook
             </p>
           </Link>
+          <br></br>
+          <p className="tagline">Find your next favorite book</p>
         </div>
         {mediaQuery ? (
           <BurgerMenu currentUser={currentUser} handleLogout={handleLogout} />
