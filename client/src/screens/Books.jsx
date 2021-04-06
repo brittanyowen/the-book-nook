@@ -11,7 +11,9 @@ function Books(props) {
           <Card title={title} image={image_url} />
         </Link>
       ) : (
-        <Card title={title} image={image_url} />
+          <Link to="/login">
+            <Card title={title} image={image_url} />
+          </Link>
       )}
     </div>
   );

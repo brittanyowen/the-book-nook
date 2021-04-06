@@ -29243,3 +29243,1025 @@ Processing by AuthenticationController#verify as HTML
 Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 4551)
 
 
+Started GET "/books" for ::1 at 2021-04-05 22:18:26 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-05 22:18:26 -0500
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 45ms (Views: 2.3ms | ActiveRecord: 11.7ms | Allocations: 12272)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 45.3ms | Allocations: 13232)
+
+
+Started GET "/books/22/reviews" for ::1 at 2021-04-05 22:18:35 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"22"}
+Started GET "/books/22" for ::1 at 2021-04-05 22:18:35 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (3.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 94ms (Views: 7.3ms | ActiveRecord: 57.8ms | Allocations: 10190)
+
+
+Completed 200 OK in 89ms (Views: 36.8ms | ActiveRecord: 7.9ms | Allocations: 10346)
+
+
+Started GET "/books/21/reviews" for ::1 at 2021-04-05 22:19:24 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"21"}
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+Started GET "/books/21" for ::1 at 2021-04-05 22:19:24 -0500
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 21]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (1.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 33ms (Views: 19.3ms | ActiveRecord: 4.2ms | Allocations: 6941)
+
+
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 21]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 23ms (Views: 4.0ms | ActiveRecord: 5.1ms | Allocations: 6401)
+
+
+Started GET "/books/19/reviews" for ::1 at 2021-04-05 22:19:55 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"19"}
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 19]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 1301)
+
+
+Started GET "/books/19" for ::1 at 2021-04-05 22:19:55 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 19]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 1.4ms | Allocations: 1828)
+
+
+Started GET "/books/18/reviews" for ::1 at 2021-04-05 22:20:25 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"18"}
+Started GET "/books/18" for ::1 at 2021-04-05 22:20:25 -0500
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mReview Load (2.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 18]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 3.8ms | Allocations: 1633)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 18]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 2.9ms | ActiveRecord: 3.2ms | Allocations: 2517)
+
+
+Started GET "/books/17/reviews" for ::1 at 2021-04-05 22:20:54 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"17"}
+Started GET "/books/17" for ::1 at 2021-04-05 22:20:54 -0500
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by BooksController#show as HTML
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  Parameters: {"id"=>"17"}
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 17]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 1565)
+
+
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 17]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 2.8ms | Allocations: 2515)
+
+
+Started GET "/books/13/reviews" for ::1 at 2021-04-05 22:21:26 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"13"}
+Started GET "/books/13" for ::1 at 2021-04-05 22:21:26 -0500
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 1753)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 3.8ms | ActiveRecord: 2.9ms | Allocations: 2488)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:16:55 -0500
+Started GET "/auth/verify" for ::1 at 2021-04-06 08:16:55 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mBook Load (5.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 78ms (Views: 3.0ms | ActiveRecord: 44.8ms | Allocations: 13912)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 74ms (Views: 0.3ms | ActiveRecord: 50.2ms | Allocations: 13227)
+
+
+Started GET "/books/22/reviews" for ::1 at 2021-04-06 08:20:34 -0500
+Started GET "/books/22" for ::1 at 2021-04-06 08:20:34 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"22"}
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[36mBook Load (2.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (4.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  [1m[36mReview Load (2.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 216ms (Views: 96.9ms | ActiveRecord: 60.0ms | Allocations: 9946)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 219ms (Views: 41.0ms | ActiveRecord: 123.4ms | Allocations: 9928)
+
+
+Started GET "/books/21/reviews" for ::1 at 2021-04-06 08:20:40 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"21"}
+Started GET "/books/21" for ::1 at 2021-04-06 08:20:40 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 21]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 21]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 43ms (Views: 4.7ms | ActiveRecord: 2.9ms | Allocations: 5651)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 21.8ms | ActiveRecord: 2.0ms | Allocations: 8080)
+
+
+Started GET "/books/17/reviews" for ::1 at 2021-04-06 08:20:47 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"17"}
+Started GET "/books/17" for ::1 at 2021-04-06 08:20:47 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 17]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 17]]
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 2644)
+
+
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 19ms (Views: 9.4ms | ActiveRecord: 2.1ms | Allocations: 3004)
+
+
+Started GET "/books/2/reviews" for ::1 at 2021-04-06 08:20:55 -0500
+Started GET "/books/2" for ::1 at 2021-04-06 08:20:55 -0500
+Processing by ReviewsController#index as HTML
+Processing by BooksController#show as HTML
+  Parameters: {"book_id"=>"2"}
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (1.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 25ms (Views: 8.9ms | ActiveRecord: 3.2ms | Allocations: 3378)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 37ms (Views: 14.9ms | ActiveRecord: 4.2ms | Allocations: 6729)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:21:06 -0500
+Processing by ReviewsController#index as HTML
+Started GET "/books/1" for ::1 at 2021-04-06 08:21:06 -0500
+  Parameters: {"book_id"=>"1"}
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 36ms (Views: 5.2ms | ActiveRecord: 2.6ms | Allocations: 4036)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 41ms (Views: 16.8ms | ActiveRecord: 2.5ms | Allocations: 6087)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-06 08:23:13 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 367ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 886)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:23:14 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (25.7ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 31ms (Views: 2.1ms | ActiveRecord: 25.7ms | Allocations: 1863)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:23:17 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"1"}
+Started GET "/books/1" for ::1 at 2021-04-06 08:23:17 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 1.9ms | Allocations: 3266)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 32ms (Views: 10.4ms | ActiveRecord: 2.2ms | Allocations: 6501)
+
+
+Started DELETE "/books/1/reviews/1" for ::1 at 2021-04-06 08:23:19 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"1", "id"=>"1"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (27.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 38ms (ActiveRecord: 28.9ms | Allocations: 1875)
+
+
+Started DELETE "/books/1/reviews/5" for ::1 at 2021-04-06 08:23:21 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"1", "id"=>"5"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.6ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 32ms (ActiveRecord: 1.7ms | Allocations: 1724)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:23:27 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"1"}
+Started GET "/books/1" for ::1 at 2021-04-06 08:23:27 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 53ms (Views: 36.2ms | ActiveRecord: 1.5ms | Allocations: 3024)
+
+
+  [1m[36mUser Load (29.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 62ms (Views: 4.1ms | ActiveRecord: 30.0ms | Allocations: 4643)
+
+
+Started GET "/books/2" for ::1 at 2021-04-06 08:23:33 -0500
+Started GET "/books/2/reviews" for ::1 at 2021-04-06 08:23:33 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 28ms (Views: 9.6ms | ActiveRecord: 3.8ms | Allocations: 3438)
+
+
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 14.7ms | ActiveRecord: 4.0ms | Allocations: 6599)
+
+
+Started DELETE "/books/2/reviews/14" for ::1 at 2021-04-06 08:23:35 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"2", "id"=>"14"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 1.8ms | Allocations: 1726)
+
+
+Started DELETE "/books/2/reviews/16" for ::1 at 2021-04-06 08:23:35 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"2", "id"=>"16"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 12ms (ActiveRecord: 1.5ms | Allocations: 1724)
+
+
+Started DELETE "/books/2/reviews/15" for ::1 at 2021-04-06 08:23:36 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"2", "id"=>"15"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.6ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 15]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 13ms (ActiveRecord: 1.7ms | Allocations: 1724)
+
+
+Started DELETE "/books/2/reviews/2" for ::1 at 2021-04-06 08:23:37 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"2", "id"=>"2"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.6ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 28ms (ActiveRecord: 1.9ms | Allocations: 1723)
+
+
+Started GET "/books/3/reviews" for ::1 at 2021-04-06 08:23:43 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"3"}
+Started GET "/books/3" for ::1 at 2021-04-06 08:23:43 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 29ms (Views: 5.3ms | ActiveRecord: 1.9ms | Allocations: 4352)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 46ms (Views: 27.9ms | ActiveRecord: 1.5ms | Allocations: 9077)
+
+
+Started DELETE "/books/3/reviews/11" for ::1 at 2021-04-06 08:23:45 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"11"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.6ms | Allocations: 1723)
+
+
+Started DELETE "/books/3/reviews/10" for ::1 at 2021-04-06 08:23:46 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"10"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.3ms | Allocations: 1723)
+
+
+Started DELETE "/books/3/reviews/9" for ::1 at 2021-04-06 08:23:47 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"9"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 1.6ms | Allocations: 1723)
+
+
+Started DELETE "/books/3/reviews/8" for ::1 at 2021-04-06 08:23:48 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"8"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.5ms | Allocations: 1723)
+
+
+Started DELETE "/books/3/reviews/7" for ::1 at 2021-04-06 08:23:50 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"7"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 1.9ms | Allocations: 1724)
+
+
+Started DELETE "/books/3/reviews/6" for ::1 at 2021-04-06 08:23:51 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"3", "id"=>"6"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.5ms | Allocations: 1723)
+
+
+Started GET "/books/4" for ::1 at 2021-04-06 08:23:58 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+Started GET "/books/4/reviews" for ::1 at 2021-04-06 08:23:58 -0500
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  Parameters: {"book_id"=>"4"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/books_controller.rb:14:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.7ms | Allocations: 3195)
+
+
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 19ms (Views: 5.6ms | ActiveRecord: 2.6ms | Allocations: 4403)
+
+
+Started DELETE "/books/4/reviews/21" for ::1 at 2021-04-06 08:24:00 -0500
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"book_id"=>"4", "id"=>"21"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mReview Destroy (0.5ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 21]]
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:39:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.2ms | Allocations: 1723)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:24:04 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"1"}
+Started GET "/books/1" for ::1 at 2021-04-06 08:24:04 -0500
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 2.6ms | Allocations: 2952)
+
+
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 2.5ms | ActiveRecord: 2.3ms | Allocations: 3474)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-06 08:24:15 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 279ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 783)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:24:16 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 1860)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:24:19 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"1"}
+Started GET "/books/1" for ::1 at 2021-04-06 08:24:19 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 14ms (Views: 5.2ms | ActiveRecord: 2.8ms | Allocations: 3546)
+
+
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 3.8ms | Allocations: 3709)
+
+
+Started PUT "/books/1/reviews/3" for ::1 at 2021-04-06 08:24:33 -0500
+Processing by ReviewsController#update as HTML
+  Parameters: {"review"=>{"content"=>"I’ve been moved by books in the past, many times, but I’ve never before read a book that has emotionally drained me to such a degree. This is frightening and powerful. And sometimes it only takes a single paragraph to make you realize how much so", "book_id"=>1, "user_id"=>2}, "book_id"=>"1", "id"=>"3"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:45:in `set_review'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mReview Update (1.1ms)[0m  [1m[33mUPDATE "reviews" SET "content" = $1, "updated_at" = $2 WHERE "reviews"."id" = $3[0m  [["content", "I’ve been moved by books in the past, many times, but I’ve never before read a book that has emotionally drained me to such a degree. This is frightening and powerful. And sometimes it only takes a single paragraph to make you realize how much so"], ["updated_at", "2021-04-06 13:24:33.629640"], ["id", 3]]
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/reviews_controller.rb:30:in `update'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 4235)
+
+
+Started GET "/books/2/reviews" for ::1 at 2021-04-06 08:24:45 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 994)
+
+
+Started GET "/books/2" for ::1 at 2021-04-06 08:24:45 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.9ms | Allocations: 1827)
+
+
+Started GET "/books/3/reviews" for ::1 at 2021-04-06 08:24:47 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"3"}
+Started GET "/books/3" for ::1 at 2021-04-06 08:24:47 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 2522)
+
+
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 17ms (Views: 2.2ms | ActiveRecord: 1.0ms | Allocations: 3041)
+
+
+Started GET "/books/4/reviews" for ::1 at 2021-04-06 08:24:48 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"4"}
+Started GET "/books/4" for ::1 at 2021-04-06 08:24:48 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (25.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (1.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (2.7ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 41ms (Views: 7.7ms | ActiveRecord: 28.1ms | Allocations: 3944)
+
+
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 40ms (Views: 7.0ms | ActiveRecord: 4.0ms | Allocations: 3928)
+
+
+Started GET "/books/13/reviews" for ::1 at 2021-04-06 08:24:51 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"13"}
+Started GET "/books/13" for ::1 at 2021-04-06 08:24:51 -0500
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Processing by BooksController#show as HTML
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (24.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 30ms (Views: 0.2ms | ActiveRecord: 25.3ms | Allocations: 1593)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 31ms (Views: 2.2ms | ActiveRecord: 1.5ms | Allocations: 2514)
+
+
+Started GET "/books/13/reviews" for ::1 at 2021-04-06 08:24:53 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"13"}
+Started GET "/books/13" for ::1 at 2021-04-06 08:24:53 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 2192)
+
+
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 26ms (Views: 1.7ms | ActiveRecord: 1.1ms | Allocations: 3032)
+
+
+Started GET "/books/4/reviews" for ::1 at 2021-04-06 08:24:56 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"4"}
+Started GET "/books/4" for ::1 at 2021-04-06 08:24:56 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 39ms (Views: 9.9ms | ActiveRecord: 1.5ms | Allocations: 3674)
+
+
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 4]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 40ms (Views: 3.9ms | ActiveRecord: 2.5ms | Allocations: 3991)
+
+
+Started GET "/books/2/reviews" for ::1 at 2021-04-06 08:24:57 -0500
+Started GET "/books/2" for ::1 at 2021-04-06 08:24:57 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"2"}
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1636)
+
+
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 2]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 2.4ms | Allocations: 3032)
+
+
+Started GET "/books/1/reviews" for ::1 at 2021-04-06 08:25:02 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"1"}
+Started GET "/books/1" for ::1 at 2021-04-06 08:25:02 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 1]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 24ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 3696)
+
+
+Completed 200 OK in 21ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 3771)
+
+
+Started GET "/books/3/reviews" for ::1 at 2021-04-06 08:25:07 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"3"}
+Started GET "/books/3" for ::1 at 2021-04-06 08:25:07 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  ↳ app/controllers/books_controller.rb:13:in `show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 2486)
+
+
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 3]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 20ms (Views: 2.9ms | ActiveRecord: 1.3ms | Allocations: 3031)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:31:11 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 153ms (Views: 4.9ms | ActiveRecord: 12.0ms | Allocations: 4001)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:31:13 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 1860)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:32:11 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 30ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1860)
+
+
+Started POST "/auth/login" for ::1 at 2021-04-06 08:38:26 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"brittany", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "brittany"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 324ms (Views: 0.3ms | ActiveRecord: 33.1ms | Allocations: 2867)
+
+
+Started GET "/books" for ::1 at 2021-04-06 08:38:26 -0500
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (1.4ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 20]]
+  ↳ app/controllers/books_controller.rb:8:in `sort_by'
+Completed 200 OK in 10ms (Views: 4.0ms | ActiveRecord: 1.4ms | Allocations: 1863)
+
+
+Started GET "/books/22/reviews" for ::1 at 2021-04-06 08:38:28 -0500
+Started GET "/books/22" for ::1 at 2021-04-06 08:38:28 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"22"}
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 5.8ms | ActiveRecord: 1.1ms | Allocations: 3597)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 22]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 26ms (Views: 4.4ms | ActiveRecord: 10.0ms | Allocations: 6988)
+
+
+Started GET "/books/13/reviews" for ::1 at 2021-04-06 08:38:33 -0500
+Processing by ReviewsController#index as HTML
+  Parameters: {"book_id"=>"13"}
+Started GET "/books/13" for ::1 at 2021-04-06 08:38:33 -0500
+Processing by BooksController#show as HTML
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `index'
+  Parameters: {"id"=>"13"}
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/reviews_controller.rb:9:in `sort_by'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 1603)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:13:in `show'
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."book_id" = $1[0m  [["book_id", 13]]
+  ↳ app/controllers/books_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 1.7ms | Allocations: 2514)
+
+
