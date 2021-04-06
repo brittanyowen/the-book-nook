@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @book = Book.find(params[:book_id])
     @reviews = Review.where(book_id: @book.id)
     # https://support.workato.com/en/support/discussions/topics/1000091251
-    render json: @reviews.sort_by{|x| x[:created_at]}, include: :user
+    render json: @reviews.sort_by{|x| x[:created_at]}.reverse, include: :user
   end
 
   #GET /reviews/1
