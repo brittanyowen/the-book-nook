@@ -1,4 +1,4 @@
-# The Book Nook
+# [The Book Nook](https://the-book-nook.netlify.app/)
 
 ## Overview
 
@@ -31,6 +31,8 @@ The challenges I forsee going into project week include time management in terms
 |      React       | Front end user interface |
 | React Router DOM | Component rendering |
 |      Axios       | Library that helps make API calls in React |
+| Styled Components| For styling the hamburger menu |
+| React Media Hook | In line Media Queries |
 |   Ruby on Rails  | Server-side web app framework |
 |       jwt        | Ruby implementation of JSON Web Tokens |
 |      bcrypt      | Password hashing gem for Ruby |
@@ -133,11 +135,11 @@ src
 | Build ReviewCreate form component |    H     |     2 hrs      |     3 hrs     |
 | Search component on Books screen |    H     |     3 hrs      |     2 hrs     |
 | Filter component using tags table on Books screen |    H     |     3 hrs      |      N/A     |
-| CSS |    M     |     3 hrs      |     3 hrs     |
+| CSS |    M     |     3 hrs      |     6 hrs     |
 | Media Queries |    H     |     2 hrs      |     3 hrs     |
-| Deployment |    H     |     1 hrs      |      hrs     |
+| Deployment |    H     |     1 hrs      |     1 hrs     |
 | POST MVP - like a book  |    L     |     5 hrs      |      hrs     |
-| TOTAL               |          |     48 hrs      |     31 hrs     |
+| TOTAL               |          |     48 hrs      |     35 hrs     |
 
 
 ### Server (Back End)
@@ -162,8 +164,37 @@ src
 
 ## Code Showcase
 
-N/A
+``` javascript
+    <div className="modal-container" onClick={(e) => handleOpen(false)}>
+      <div className="modal" onClick={(e) => e.stopPropagation()}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            reviewUpdate(book?.id, params.id, reviewData);
+            handleOpen(false);
+          }}
+        >
+          <label>
+            Edit Review:
+            <textarea
+              type="text"
+              rows={10}
+              cols={78}
+              name="content"
+              value={content}
+              onChange={handleChange}
+            />
+          </label>
+          <div className="modal-buttons">
+            <button className="edit">UPDATE</button>
+            <button onClick={() => handleOpen(false)}>CANCEL</button>
+          </div>
+        </form>
+      </div>
+    </div>
+```
 
 ## Code Issues & Resolutions
 
-N/A
+I ran into a few hiccups whens starting to build my front end based off of the data the backend was returning. This was a great learning opportunity for me to understand how the JSON data is being rendered in order to display it on the front end and how to troubleshoot Rails error messages. 
+One issue I had was not passing the correct parameters to the server in order for it to process a PUT request. I ended up using my React Components dev tools in conjunction with the Rails error messages to learn that the correct number of parameters were not being sent nor was the data in those parameters correct. I was then able to fix my code to get the desired response back from the server. 
